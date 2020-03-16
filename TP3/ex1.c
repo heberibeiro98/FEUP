@@ -15,5 +15,5 @@ int main(int argc, char *argv[], char *envp[])
     printf("%s\n", *envp); //Imprime a variavel de ambiente atual
     *(envp++); //Alternativamente podia ser usado um for em vez de um while e envp[i] em vez de *(envp++)
   }
-  return -1;
+  return 0;
 }
