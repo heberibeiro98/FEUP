@@ -16,6 +16,7 @@ int main(int argc, char *argv[], char *envp[])
   if(pid < 0)
   {
     printf("Error creating child process!\n");
+    return -1;
   }
   else if(pid > 0) //Se pid > 0, executa o codigo do parent
   {
