@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
   {
     pthread_create(&(thread[i]), 0, threadID, &(arr[i]));
   }
-  for(i = 0; i < aux; i++) //Este for garante que cada threas termina e imprime o seu return value (o numero da thread)
+  for(i = 0; i < aux; i++) //Este for garante que cada thread termina e imprime o seu return value (o numero da thread)
   {
     pthread_join(thread[i], &ret);
     printf("Thread return value: %ld\n", (long)ret);
