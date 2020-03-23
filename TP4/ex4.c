@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
   if((tamanhopartit * numerothreads) < tamanhoarray)
   {
     int aux;
-    aux = tamanhoarray - ((numerothreads - 1)*tamanhopartit);
+    aux = tamanhoarray - (numerothreads * tamanhopartit);
     t->remainingpartit = aux;
     flg = 1;
   }
@@ -71,13 +71,18 @@ int main(int argc, char *argv[])
   }
   t->arr = array;
   t->partit = tamanhoarray;
+  t->indice = 0;
   for(i = 0; i < numerothreads; i++)
   {
-    t->indice = idc;
     pthread_create(&(threads[i]), 0, ArrayInitializer, t);
-    if(i == (numerothreads - 1) || (flg == 1))
+    if(i == (numerothreads - 1) && (flg == 1))
     {
+      t->indice = idc + t->remainingpartit;
       t->flag = flg;
+    }
+    else
+    {
+      t->indice = idc + tamanhopartit;
     }
   }
   for(i = 0; i < numerothreads; i++)
@@ -92,3 +97,4 @@ int main(int argc, char *argv[])
   printf("\n");
   return 0;
 }
+
