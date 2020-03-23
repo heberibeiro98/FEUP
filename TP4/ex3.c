@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     return -1;
   }
   arr[0] = 1;
-  for(i = 1; i < aux; i++) //Este for vai preencher o array por ordem (ex: 0, 1, 2, 3, 4, 5, etc)
+  for(i = 1; i < aux; i++) //Este for vai preencher o array por ordem (ex: 1, 2, 3, 4, 5, etc)
   {
     arr[i] = arr[i-1] + 1;
   }
