@@ -4,8 +4,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-typedef void*(*func)(void*); //Mesma explicaçao das alineas do exercicio 1
-
 void* threadID(void* arg)
 {
   long t = *(int *)arg; //O tipo da variavel é long pela mesma explicaçao dada em ex1d.c
