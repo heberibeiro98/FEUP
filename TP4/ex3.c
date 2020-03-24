@@ -3,9 +3,7 @@
 #include <sys/syscall.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <stdlib.h>
-
-typedef void*(*func)(void*);                            //Este programa é basicamente igual ao ex2.c, com a diferença que agora
+#include <stdlib.h>                                     //Este programa é basicamente igual ao ex2.c, com a diferença que agora
                                                         //o numero de threads é passado como arguemnto em vez de ser 3
 void* threadID(void* arg)
 {
