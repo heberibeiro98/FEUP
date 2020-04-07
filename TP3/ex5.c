@@ -10,7 +10,7 @@ int main(int argc, char *argv[], char *envp[])
     printf("Not enough arguments!\n");
     return -1;
   }
-  char *args[] = {"gcc", argv[1]}; //Os argumentos passados a execve é como se estivessemos a compilar um programa no terminal (ex: gcc test.c, em que test.c é o argv[1])
+  char *args[] = {"gcc", argv[1], NULL}; //Os argumentos passados a execve é como se estivessemos a compilar um programa no terminal (ex: gcc test.c, em que test.c é o argv[1])
   execve("/usr/bin/gcc", args, envp); //Ver man execve
   return 0;
 }
