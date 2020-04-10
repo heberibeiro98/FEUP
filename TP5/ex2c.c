@@ -33,11 +33,17 @@ void *threadpop(void *arg)
   return 0;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
+  if(argc < 2)
+  {
+    printf("Not enough arguments!\n);
+    return -1;
+  }
   elemento elem;
   pthread_t threads[4];
-  int nvezes = 10000, i, n, defice;
+  int nvezes, i, n, defice;
+  sscanf(argv[1], "%d", &nvezes);
   threadargs t[4];
   for(i = 0; i < 4; i++)
   {
