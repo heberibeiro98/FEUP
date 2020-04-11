@@ -13,15 +13,14 @@ int main(int argc, char *argv[])
   long counter = 0;
   int nvezes, i;
   pthread_t thread[3];
-  targ_t args[3], *aux;
+  targ_t argumentos[3];
   sscanf(argv[1], "%d", &nvezes);
   for(i = 0; i < 3; i++)
   {
-    aux = &args[i];
-    aux->cnt = &counter;
-    aux->n = nvezes;
-    aux->id = i;
-    pthread_create(&(thread[i]), 0, tfun, aux);
+    (argumentos+i)->cnt = &counter;
+    (argumentos+i)->n = nvezes;
+    (argumentos+i)->id = i;
+    pthread_create(&(thread[i]), 0, tfun, &(argumentos[i]));
   }
   for(i = 0; i < 3; i++)
   {
