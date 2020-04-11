@@ -7,7 +7,7 @@ typedef struct
 {
   elemento *el;
   char *str;
-  char n;
+  int n;
   int cont;
 }threadargs;
 
